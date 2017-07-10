@@ -5321,6 +5321,12 @@
             }
             $this.data('window', (o = new Window(this, options)));
         });
+        var nowDiv = o.$window;
+        nowDiv.mouseout(function(){
+            if(nowDiv.offset().top < 0){
+                nowDiv.css("top", 0);
+            }
+        });
         return o;
     };
 }(window);
